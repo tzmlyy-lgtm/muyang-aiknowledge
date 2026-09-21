@@ -1,0 +1,19 @@
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Local WorkBuddy state
+.workbuddy/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 大图 PNG 原稿（页面使用 WebP 版本，不入库）
+images/minimalist_narrative_gouache_*.png
+
+# workflow 文件待 Token 升级 workflow scope 后再入库
+.github/

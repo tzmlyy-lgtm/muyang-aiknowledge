@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沐阳站点 · 功能全览与增强路线图</title>
+<style>
+  :root{--bg:#FAF6EF;--panel:#fff;--ink:#2B2A26;--muted:#8C8475;--brand:#3B6CB7;--brand2:#274E8C;--accent:#C25B4E;--line:#E7DECF;--light:#F4EEE2;
+    --orange:#E0A33D;--green:#7BA05B}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding-bottom:60px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  header{background:linear-gradient(135deg,#274E8C,#3B6CB7);color:#fff;padding:52px 0 42px;text-align:center}
+  header h1{font-size:30px;letter-spacing:2px;font-family:"Songti SC","SimSun",serif;font-weight:900}
+  header p{margin-top:10px;font-size:14px;opacity:.85}
+  .meta{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 14px;border-radius:999px;font-size:12.5px}
+  nav.toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:-26px auto 0;max-width:960px;position:relative;z-index:2;padding:18px 22px;box-shadow:0 8px 26px rgba(59,53,40,.08)}
+  nav.toc b{font-size:14px;color:var(--brand2)}
+  nav.toc a{display:inline-block;margin:6px 10px 2px 0;font-size:13.5px;color:var(--brand);text-decoration:none;border-bottom:1px dashed transparent}
+  nav.toc a:hover{border-bottom-color:var(--brand)}
+  section{margin-top:44px}
+  h2{font-size:21px;font-family:"Songti SC","SimSun",serif;color:var(--brand2);padding-left:12px;border-left:4px solid var(--brand);margin-bottom:16px}
+  h3{font-size:16px;margin:20px 0 8px;color:var(--ink)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 3px 14px rgba(59,53,40,.05)}
+  .card h3{margin-top:0;display:flex;align-items:center;gap:8px}
+  .num{font-size:12px;font-weight:800;color:#fff;background:var(--brand);border-radius:6px;padding:1px 8px;flex:none}
+  .tag{display:inline-block;font-size:11.5px;padding:1px 9px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .t-blue{background:rgba(59,108,183,.12);color:var(--brand)}
+  .t-green{background:rgba(123,160,91,.15);color:#5a7d43}
+  .t-orange{background:rgba(224,163,61,.15);color:#a8761f}
+  .t-red{background:rgba(194,91,78,.13);color:var(--accent)}
+  ul{padding-left:20px}
+  li{margin:5px 0;font-size:14.5px}
+  li b{color:var(--brand2)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+  th{background:var(--light);text-align:left;padding:8px 10px;border:1px solid var(--line)}
+  td{padding:8px 10px;border:1px solid var(--line);vertical-align:top}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;text-align:center;padding:16px 8px}
+  .stat b{display:block;font-size:26px;color:var(--brand);font-family:Georgia,serif}
+  .stat span{font-size:12.5px;color:var(--muted)}
+  .p0{border-left:4px solid var(--accent)}
+  .p1{border-left:4px solid var(--orange)}
+  .p2{border-left:4px solid var(--green)}
+  .badge{font-size:11px;font-weight:800;padding:2px 10px;border-radius:999px;color:#fff;margin-right:8px}
+  .b0{background:var(--accent)} .b1{background:var(--orange)} .b2{background:var(--green)}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0;font-size:13px}
+  .flow .node{background:var(--light);border:1px solid var(--line);border-radius:9px;padding:7px 13px}
+  .flow .arr{color:var(--brand);font-weight:800}
+  .note{font-size:13px;color:var(--muted);background:var(--light);border-radius:10px;padding:10px 14px;margin-top:10px}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:50px}
+  @media(max-width:640px){header h1{font-size:22px}.wrap{padding:0 14px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>沐阳 · 站点功能全览与增强路线图</h1>
+    <p>整理日期 2026-09-14 · 基于全部代码与数据实测统计</p>
+    <div class="meta"><span>纯静态 · 无构建</span><span>厚涂水粉视觉体系</span><span>日/夜间双主题</span><span>hash 路由 · 独立 URL</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="toc">
+  <b>📑 目录</b><br>
+  <a href="#s1">一、站点档案</a>
+  <a href="#s2">二、数据规模总览</a>
+  <a href="#s3">三、九大视图功能全景</a>
+  <a href="#s4">四、全局能力</a>
+  <a href="#s5">五、数据与更新机制</a>
+  <a href="#s6">六、质量保障体系</a>
+  <a href="#s7">七、增强路线图（新思路）</a>
+  <a href="#s8">八、已知边界与注意事项</a>
+</nav>
+
+<!-- ============ 一 ============ -->
+<section id="s1">
+  <h2>一、站点档案</h2>
+  <div class="card">
+    <ul>
+      <li><b>品牌</b>：沐阳 · 数据与 AI 学习图谱（logo：向阳小人水粉徽标 + 思源宋体字标）</li>
+      <li><b>技术栈</b>：纯静态单页应用 —— 一个 index.html + 10 个 JS（无框架、无构建），marked.js 渲染 Markdown</li>
+      <li><b>线上地址</b>：CloudStudio 托管 <code>1f8f30cd538541999e18b00ddaf85e17.app.workbuddy.host</code>；GitHub Pages 仓库已备好（tzmlyy-lgtm.github.io），提供 Token 即可推送</li>
+      <li><b>视觉体系</b>：厚涂水粉/水彩纸质感 —— 暖米白画布 + 纸张颗粒噪声 + 笔刷扫痕，群青蓝点睛，各视图配专属水粉 hero 插画（WebP，总量约 1.1MB）</li>
+      <li><b>路由</b>：hash 路由（#briefing、#trends …），每个视图独立可分享 URL，标题随视图动态变化</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section id="s2">
+  <h2>二、数据规模总览</h2>
+  <div class="stats">
+    <div class="stat"><b>45</b><span>知识点（4 大板块）</span></div>
+    <div class="stat"><b>332</b><span>在线资料（12 分类）</span></div>
+    <div class="stat"><b>272</b><span>晨报知识库存档</span></div>
+    <div class="stat"><b>185</b><span>本地 PDF/PPTX 资源</span></div>
+    <div class="stat"><b>21</b><span>精选笔记（4 主题）</span></div>
+    <div class="stat"><b>60</b><span>测验题（4 科 × 15）</span></div>
+    <div class="stat"><b>16</b><span>实战项目（10 GH + 6 站内）</span></div>
+    <div class="stat"><b>24</b><span>条实时资讯 / 每次拉取</span></div>
+  </div>
+</section>
+
+<!-- ============ 三 ============ -->
+<section id="s3">
+  <h2>三、九大视图功能全景</h2>
+
+  <div class="card"><h3><span class="num">01</span>📘 学习图谱 <span class="tag t-blue">主页</span></h3>
+    <ul>
+      <li>Python / MySQL / 数据分析 / AI 四大板块 <b>45 个知识点</b>，按板块 + 掌握程度（🌱→🚀 四级）双维筛选</li>
+      <li>每个知识点挂真实在线资源（视频/文章/论文/文档/课程），点击直达；水粉 hero + 实时时钟（秒级跳动）</li>
+      <li>每条卡片带<b>红星收藏</b>，数据看板（板块数/知识点数/资源数/年份动态）</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">02</span>📒 学习笔记</h3>
+    <ul>
+      <li><b>21 篇</b>精选笔记（4 主题分类），内置 Markdown 渲染阅读器（marked.js），支持全文阅读、Esc 关闭、按主题筛选</li>
+      <li>笔记卡片带收藏星，计数自动同步导航</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">03</span>📰 AI 晨报 <span class="tag t-green">每日自动更新</span></h3>
+    <ul>
+      <li>五大版块仪表盘：模型发布 / 产品更新 / 行业动态 / 论文研究 / 技巧观点，各版块计数实时统计</li>
+      <li>数据源：AI HOT 实时接口（7 天精选 24 条，30 分钟缓存），断网时三级兜底（快照 → 内置 21 条）</li>
+      <li>sticky 分类导航条、卡片滚动渐入动画、每条带收藏星（key = 文章链接，稳定不漂移）</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">04</span>📡 AI 趋势</h3>
+    <ul>
+      <li>六大核心切片 + 关键数据卡 + 中美欧三极格局 + 2026 预测（Stanford HAI / McKinsey / a16z / Gartner 等来源标注）</li>
+      <li>实时资讯区：与晨报共用数据源，分类筛选 + 收藏 + 「● 实时」状态条 + 手动刷新按钮</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">05</span>📚 资料库</h3>
+    <ul>
+      <li><b>332 条在线资源</b>：12 个分类（新手入门 → 项目实战 → AI 晨报知识库），按分类 + 掌握程度双维筛选</li>
+      <li>「AI 晨报知识库」分类含 <b>272 条资讯存档</b>（摘要 + 来源 + 版块 + 日期四维信息展示）</li>
+      <li>「全部」视图限量渲染最新 100 条/分类（防卡顿），点分类看全部；收藏星全覆盖</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">06</span>🛠️ 项目实战</h3>
+    <ul>
+      <li><b>10 个 GitHub 易复现项目</b>（微软 DS/ML/GenAI、pandas、openai-cookbook、handson-ml3、LangChain 等），每个含难度/技术栈/练手建议/直达链接</li>
+      <li>另有 6 个站内配套项目，附「去 GitHub 看本周趋势」入口</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">07</span>🧪 在线编程</h3>
+    <ul>
+      <li>浏览器内直接写代码运行，Python / 其他模式切换，无需安装环境</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">08</span>📝 自我审核</h3>
+    <ul>
+      <li><b>60 道测验题</b>（Python / MySQL / 数据分析 / AI 各 15 题），逐题作答 + 答案解析 + 最高分记录（localStorage）</li>
+    </ul>
+  </div>
+
+  <div class="card"><h3><span class="num">09</span>⭐ 收藏夹</h3>
+    <ul>
+      <li>全站统一的收藏汇总：知识点 / 笔记 / 资料 / 项目 / 资讯 / GitHub 全类型卡片收藏后在此复看，点星取消，按类型着色</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 四 ============ -->
+<section id="s4">
+  <h2>四、全局能力</h2>
+  <div class="card">
+    <ul>
+      <li><b>主题系统</b>：日/夜间双主题（墨蓝纸夜间配色），手动切换 + 跟随系统 + localStorage 记忆，关键容器 0.3s 平滑过渡</li>
+      <li><b>左侧色板</b>：4 色竖排（群青蓝/赭石橙/苔绿/砖红），点击实时换全站点缀色，🎨 按钮可隐藏，状态记忆</li>
+      <li><b>实时时钟</b>：主页秒级日期时间（等宽数字 + 呼吸圆点）</li>
+      <li><b>收藏体系</b>：内存缓存（1 次存储解析服务全站渲染），key 全部稳定化</li>
+      <li><b>SEO 与分享</b>：完整 meta/keywords/canonical、Open Graph + Twitter Card、JSON-LD 结构化数据、robots.txt + sitemap.xml、每个视图独立 hash URL</li>
+      <li><b>性能</b>：图片全量 WebP（17MB→1.1MB）、字体异步加载（断网不白屏）、-webkit 前缀兼容 Safari、移动端适配（色板/hero/导航）</li>
+      <li><b>Logo</b>：向阳小人水粉徽标（圆形，水印已裁除）</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section id="s5">
+  <h2>五、数据与更新机制</h2>
+  <div class="card">
+    <div class="flow">
+      <span class="node">AI HOT 实时接口</span><span class="arr">→</span>
+      <span class="node">30 分钟共享缓存</span><span class="arr">→</span>
+      <span class="node">📰 晨报</span>
+      <span class="node">📡 趋势</span>
+    </div>
+    <div class="flow">
+      <span class="node">GitHub Actions（每 6h）</span><span class="arr">→</span>
+      <span class="node">news-data.json 快照</span><span class="arr">→</span>
+      <span class="node">二级兜底</span><span class="arr">→</span>
+      <span class="node">内置数据三级兜底</span>
+    </div>
+    <ul>
+      <li>晨报/趋势<b>完全自动运转</b>：只要站点在线就实时更新，无需人工；静态数据（知识点/笔记/资料库）随代码版本更新</li>
+      <li>静态部署：CloudStudio 每次改动重新发布；GitHub Actions 快照兜底在部署到 GitHub 后自动生效</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 六 ============ -->
+<section id="s6">
+  <h2>六、质量保障体系（每次改动后必跑）</h2>
+  <div class="card">
+    <table>
+      <tr><th>层级</th><th>工具 / 命令</th><th>防什么</th></tr>
+      <tr><td>语法</td><td>node --check script.js</td><td>低级语法错误</td></tr>
+      <tr><td>运行时回归</td><td>node verify_init.mjs（DOM stub 加载全部脚本 + 模拟 9 视图切换）</td><td>「语法对但运行时崩」（如 TDZ）</td></tr>
+      <tr><td>结构校验</td><td>Python html.parser 标签配对 + JS 引用 id ↔ HTML 交叉校验</td><td>标签损坏、元素缺失</td></tr>
+      <tr><td><b>线上冒烟</b></td><td>Edge 无头 --dump-dom 渲染线上站，grep 计数元素</td><td>stub 盲区、CDN 缓存旧版、MIME 问题（本次事故的功臣）</td></tr>
+    </table>
+    <div class="note">本次「整站瘫痪」事故复盘：畸形 script 标签（&lt;/script?v=...&gt;）被浏览器容错吞掉全部后续脚本。已沉淀四层验证，同类问题不会再漏上线。</div>
+  </div>
+</section>
+
+<!-- ============ 七 ============ -->
+<section id="s7">
+  <h2>七、增强路线图（新思路）</h2>
+
+  <div class="card p0"><h3><span class="badge b0">P0 · 短期</span>秋招刚需 + 立竿见影</h3>
+    <ul>
+      <li><b>作品集页面（最强推荐）</b>：新增「💼 作品集」视图——把站内 16 个练手项目、市调赛/大创/三创经历、奇安信 Q-GPT 实习产出整理成可展示的案例卡（背景→方法→产出→链接）。秋招投递时直接甩链接，比附件简历更有说服力，且和站点「学习→实战→作品」的叙事完全契合</li>
+      <li><b>全站搜索（Ctrl+K）</b>：一个搜索框聚合知识点/笔记/资料/晨报存档——数据全部在本地 JS 里，纯前端模糊匹配即可实现，约 100 行代码，体验提升极大</li>
+      <li><b>GitHub Pages 上线</b>：仓库已备好，提供 Token 后推送 → 获得独立域名 tzmlyy-lgtm.github.io，摆脱 workbuddy 子域，SEO 收录正式生效</li>
+      <li><b>PWA 化</b>：加 manifest + Service Worker → 手机「添加到主屏幕」像 App 一样打开，晨报离线可读</li>
+    </ul>
+  </div>
+
+  <div class="card p1"><h3><span class="badge b1">P1 · 中期</span>学习闭环 + 数据特色</h3>
+    <ul>
+      <li><b>学习进度追踪</b>：知识点打卡（已学/在学/想学），生成掌握度进度条与学习热力图——把「图谱」从静态清单变成个人成长记录</li>
+      <li><b>AI 周报</b>：每周日把 7 天晨报聚合成「本周 AI 大事记」Top10（按版块加权 + 去重），可由 GitHub Actions 自动生成快照——统计人做信息聚合，正是专业对口</li>
+      <li><b>数据集练习区</b>：新增分类收录 Kaggle/天池/政府开放数据的入门数据集 + 配套分析思路——应用统计学生的练手弹药库，站内其他模块都没有覆盖这块</li>
+      <li><b>收藏导出</b>：一键把收藏夹导出为 Markdown/剪贴板，方便写周报或笔记软件归档</li>
+      <li><b>晨报知识库再同步</b>：资料库表有新增后说一声即可重跑导入流程；或升级为 GitHub Actions 定时拉接口 → 自动 commit 到 brief-library-data.js（彻底自动化）</li>
+    </ul>
+  </div>
+
+  <div class="card p2"><h3><span class="badge b2">P2 · 长期</span>进阶玩法</h3>
+    <ul>
+      <li><b>站内 AI 学习助手（RAG）</b>：把 45 个知识点 + 21 篇笔记 + 272 条存档做成检索上下文，接一个大模型 API 做「问沐阳」——你的奇安信 Q-GPT 经验正好用来设计评测 BadCase，站点本身成为面试作品</li>
+      <li><b>访问分析仪表盘</b>：自建轻量统计（无 Cookie 的简单计数），用站内学到的可视化技能做一个「沐阳运营看板」——既是功能也是作品集素材</li>
+      <li><b>多设备同步</b>：收藏/学习进度接 Supabase 等免费后端，手机收藏电脑看</li>
+      <li><b>测验增强</b>：错题本 + 间隔复习（艾宾浩斯提醒）+ 按知识点出题</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 八 ============ -->
+<section id="s8">
+  <h2>八、已知边界与注意事项</h2>
+  <div class="card">
+    <ul>
+      <li><b>收藏/进度仅存浏览器本地</b>：换设备/清缓存会丢失（P2 多设备同步可解）</li>
+      <li><b>晨报知识库是静态快照</b>（截至 09-12，272 条）：资料库表更新后需手动触发再同步</li>
+      <li><b>在线编程依赖第三方 CDN 运行时</b>：极少数内网环境可能加载失败</li>
+      <li><b>网址</b>：当前为 workbuddy.host 子域，域名曾变更过（.link→.host），分享链接以最新为准；GitHub Pages 上线后彻底稳定</li>
+      <li><b>SEO 生效前提</b>：结构化数据已就位，但 hash 路由对搜索引擎收录弱于多页面路由；若追求收录效果，P0 的 GitHub Pages 上线后可评估拆分静态多页</li>
+    </ul>
+  </div>
+</section>
+
+<footer>沐阳 · 数据与 AI 学习图谱 · 功能全览与增强路线图 · 2026-09-14</footer>
+</div>
+</body>
+</html>

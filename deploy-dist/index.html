@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>沐阳 · 数据与 AI 学习图谱</title>
+<meta name="description" content="沐阳——面向零基础到进阶的数据与 AI 学习平台：Python、MySQL、数据分析、人工智能知识按阶段分级，含在线编程、自我审核测验、AI 晨报、AI 趋势资讯、项目实战、学习笔记与在线资源库。厚涂水粉风格，每日自动刷新资讯。" />
+<meta name="keywords" content="沐阳,数据学习,AI学习,Python,数据分析,人工智能,机器学习,深度学习,AI晨报,AI趋势,在线编程,学习笔记,项目实战" />
+<meta name="author" content="沐阳" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#FAF6EF" />
+<link rel="canonical" href="https://tzmlyy-lgtm.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="沐阳" />
+<meta property="og:title" content="沐阳 · 数据与 AI 学习图谱" />
+<meta property="og:description" content="按阶段学习 Python、数据分析、AI 知识，含在线编程、AI 晨报、AI 趋势资讯、项目实战与资源库。厚涂水粉风格，每日自动刷新。" />
+<meta property="og:url" content="https://tzmlyy-lgtm.github.io/" />
+<meta property="og:image" content="https://tzmlyy-lgtm.github.io/images/minimalist_narrative_gouache_p_2026-08-31T14-47-06.webp" />
+<meta property="og:locale" content="zh_CN" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="沐阳 · 数据与 AI 学习图谱" />
+<meta name="twitter:description" content="按阶段学习 Python、数据分析、AI 知识，含在线编程、AI 晨报、AI 趋势资讯、项目实战与资源库。" />
+<meta name="twitter:image" content="https://tzmlyy-lgtm.github.io/images/minimalist_narrative_gouache_p_2026-08-31T14-47-06.webp" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "沐阳",
+  "alternateName": "数据与 AI 学习图谱",
+  "description": "面向零基础到进阶的数据与 AI 学习平台：Python、数据分析、人工智能知识按阶段分级，含在线编程、AI 晨报、AI 趋势资讯、项目实战与在线资源库。",
+  "url": "https://tzmlyy-lgtm.github.io/",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tzmlyy-lgtm.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 字体异步加载：网络不通/超时也不阻塞页面渲染，自动回退本地宋体 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet"></noscript>
+<!-- PWA：添加到主屏幕 + 离线可读 -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="沐阳">
+<style>
+  :root{
+    --bg:#FAF6EF; --panel:#FFFFFF; --text:#2B2A26; --muted:#8C8475;
+    --brand:#3B6CB7; --brand-2:#274E8C; --brand-3:#C25B4E; --line:#E7DECF;
+    --c-light:#F4EEE2;
+    --lv1:#6BA368; --lv2:#3B6CB7; --lv3:#E0A33D; --lv4:#C25B4E;
+    --shadow:0 12px 40px rgba(59,53,40,.12);
+    --shadow-sm:0 3px 14px rgba(59,53,40,.08);
+    --radius:18px;
+    --nav-bg:rgba(250,246,239,.86);
+    --briefnav-bg:rgba(250,246,239,.90);
+    --paper:#FAF6EF; --ink:#2B2A26; --accent-warm:#E8A33D; --moss:#7BA05B; --brick:#C25B4E;
+  }
+  /* 夜间模式变量（墨蓝纸） */
+  :root[data-theme="dark"]{
+    --bg:#19223A; --panel:#222C45; --text:#ECE6D8; --muted:#9AA1B0;
+    --brand:#6E9BD8; --brand-2:#3B6CB7; --brand-3:#E08A7E; --line:#33405E;
+    --c-light:#1E2840;
+    --lv1:#7FB87C; --lv2:#6E9BD8; --lv3:#E8B765; --lv4:#E08A7E;
+    --shadow:0 12px 40px rgba(0,0,0,.5);
+    --shadow-sm:0 3px 14px rgba(0,0,0,.35);
+    --nav-bg:rgba(25,34,58,.86);
+    --briefnav-bg:rgba(25,34,58,.90);
+    --paper:#19223A; --ink:#ECE6D8; --accent-warm:#E8B765; --moss:#7FB87C; --brick:#E08A7E;
+  }
+  /* 日间模式变量（强制，厚涂水粉纸） */
+  :root[data-theme="light"]{
+    --bg:#FAF6EF; --panel:#FFFFFF; --text:#2B2A26; --muted:#8C8475;
+    --brand:#3B6CB7; --brand-2:#274E8C; --brand-3:#C25B4E; --line:#E7DECF;
+    --c-light:#F4EEE2;
+    --lv1:#6BA368; --lv2:#3B6CB7; --lv3:#E0A33D; --lv4:#C25B4E;
+    --shadow:0 12px 40px rgba(59,53,40,.12);
+    --shadow-sm:0 3px 14px rgba(59,53,40,.08);
+    --nav-bg:rgba(250,246,239,.86);
+    --briefnav-bg:rgba(250,246,239,.90);
+    --paper:#FAF6EF; --ink:#2B2A26; --accent-warm:#E8A33D; --moss:#7BA05B; --brick:#C25B4E;
+  }
+  /* 跟随系统偏好（未手动选择时，墨蓝纸） */
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#19223A; --panel:#222C45; --text:#ECE6D8; --muted:#9AA1B0;
+      --brand:#6E9BD8; --brand-2:#3B6CB7; --brand-3:#E08A7E; --line:#33405E;
+      --c-light:#1E2840;
+      --lv1:#7FB87C; --lv2:#6E9BD8; --lv3:#E8B765; --lv4:#E08A7E;
+      --shadow:0 12px 40px rgba(0,0,0,.5);
+      --shadow-sm:0 3px 14px rgba(0,0,0,.35);
+      --nav-bg:rgba(25,34,58,.86); --briefnav-bg:rgba(25,34,58,.90);
+      --paper:#19223A; --ink:#ECE6D8; --accent-warm:#E8B765; --moss:#7FB87C; --brick:#E08A7E;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  /* 主题切换时的平滑过渡 */
+  body, .nav, .panel, .kp, .doc, .note-card, .slice-card, .pred-card, .kd-card, .news-card, .gh-card, .kno-card,
+  .brief-card, .proj, .quiz-card, .chip, .lib-cat, .step, .stat, .brief-stat, .brief-nav, header, .brief-hero{
+    transition: background-color .3s ease, border-color .3s ease, color .3s ease, box-shadow .3s ease;
+  }
+  a{color:var(--brand);text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* Top nav */
+  .nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);-webkit-backdrop-filter:/1;backdrop-filter:/1;
+    border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;gap:14px;height:60px;overflow-x:auto}
+  .logo{font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .logo-emblem{width:32px;height:32px;border-radius:50%;object-fit:cover;box-shadow:0 2px 6px rgba(59,108,183,.22);border:1.5px solid var(--line);background:var(--paper);flex:none}
+  .wordmark{font-family:"Noto Serif SC","Songti SC",STSong,"SimSun",serif;font-weight:700;color:var(--text);letter-spacing:2px;font-size:19px}
+  .nav-tabs{display:flex;gap:6px;margin-left:auto}
+  .nav-tab{padding:8px 14px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--muted);transition:.2s;white-space:nowrap}
+  .nav-tab:hover{background:var(--c-light)}
+  .nav-tab.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+  .theme-toggle{margin-left:14px;flex:none;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);
+    background:var(--c-light);color:var(--text);font-size:18px;cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .theme-toggle:hover{border-color:var(--brand);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+
+  /* Header */
+  header{
+    background:linear-gradient(135deg,#1d4ed8 0%,#7c3aed 60%,#db2777 100%);
+    color:#fff;padding:60px 0 150px;position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity:.6}
+  header::after{content:"";position:absolute;right:-10%;top:-30%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 60%)}
+  header h1{font-size:40px;font-weight:900;letter-spacing:.5px;position:relative;line-height:1.25}
+  header p{margin-top:16px;font-size:18px;opacity:.93;max-width:720px;position:relative}
+  .stats{display:flex;gap:18px;margin-top:30px;position:relative;flex-wrap:wrap}
+  .stat{background:rgba(255,255,255,.12);padding:15px 22px;border-radius:14px;-webkit-backdrop-filter:/1;backdrop-filter:/1;border:1px solid rgba(255,255,255,.1);min-width:108px}
+  .stat b{display:block;font-size:28px;font-weight:800}
+  .stat span{font-size:13px;opacity:.88}
+
+  .controls{margin:-78px auto 0;max-width:1080px;position:relative;z-index:2}
+  .panel{background:var(--panel);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  .control-group{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+  .control-group+.control-group{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line)}
+  .control-label{display:flex;flex-direction:column;gap:2px;min-width:80px;padding-top:8px}
+  .control-label strong{font-size:15px;color:var(--text)}
+  .control-label small{font-size:12px;color:var(--muted);font-weight:400}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;flex:1}
+  .chip{padding:9px 17px;border:1px solid var(--line);border-radius:999px;background:var(--c-light);
+    color:var(--text);cursor:pointer;font-size:14px;transition:.2s;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .chip:hover{border-color:var(--brand);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+  .chip.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent}
+
+  /* Learning path stepper */
+  .path{margin:34px 0 10px}
+  .path h2{font-size:20px;font-weight:800;margin-bottom:4px}
+  .path .sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative;box-shadow:var(--shadow-sm)}
+  .step .num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px;margin-bottom:12px}
+  .step h3{font-size:16px;font-weight:800;margin-bottom:6px}
+  .step p{font-size:13.5px;color:var(--muted)}
+  .step .arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--brand);z-index:2}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}.step .arrow{display:none}}
+
+  .projects{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+  .proj{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.25s}
+  .proj:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .proj .tag{font-size:11px;font-weight:800;color:#fff;padding:4px 10px;border-radius:999px;align-self:flex-start;margin-bottom:10px}
+  .proj h3{font-size:17px;font-weight:800;margin-bottom:8px}
+  .proj p{font-size:13.5px;color:var(--muted);flex:1}
+  .proj .stack{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+  .proj .stack span{font-size:11px;background:var(--c-light);border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--text)}
+  .proj a.ref{font-size:13px;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:4px}
+
+  main{padding:20px 0 70px}
+  .topic-title{display:flex;align-items:center;gap:12px;margin:40px 0 18px;font-size:22px;font-weight:800}
+  .topic-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .topic-desc{color:var(--muted);font-size:14px;margin-left:auto;font-weight:400;text-align:right;max-width:320px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+  .kp{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+    box-shadow:var(--shadow-sm);transition:.25s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .kp:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .kp::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--bd);opacity:.85}
+  .kp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+  .kp h3{font-size:18px;font-weight:800}
+  .badge{padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800;color:#fff;white-space:nowrap}
+  .kp p{color:var(--muted);font-size:14.5px;flex:1}
+  .kp pre{margin-top:16px;background:#0d1117;color:#e6edf3;border-radius:12px;padding:15px;overflow:auto;font-size:13px;
+    font-family:"SFMono-Regular",Consolas,monospace;line-height:1.55;border:1px solid #30363d}
+  .kp code{font-family:"SFMono-Regular",Consolas,monospace}
+  .kp .tip{margin-top:14px;font-size:13px;color:var(--brand);border-left:3px solid var(--brand);padding:10px 12px;background:rgba(37,99,235,.06);border-radius:0 8px 8px 0}
+  .kp .lib-btn{margin-top:12px;align-self:flex-start;font-size:12.5px;font-weight:700;color:#7c3aed;border:1px solid #7c3aed;
+    background:rgba(124,58,237,.07);border-radius:999px;padding:6px 12px;cursor:pointer;transition:.2s}
+  .kp .lib-btn:hover{background:#7c3aed;color:#fff}
+
+  .res{margin-top:16px}
+  .res-title{font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:700}
+  .res-list{display:flex;flex-wrap:wrap;gap:8px}
+  .res-item{display:inline-flex;align-items:center;gap:6px;background:var(--c-light);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--text);transition:.2s}
+  .res-item:hover{border-color:var(--brand);background:var(--panel);color:var(--brand)}
+  .res-item .tag{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;color:#fff}
+  .tag.video{background:#dc2626}.tag.article{background:#2563eb}.tag.paper{background:#7c3aed}.tag.doc{background:#0d9488}.tag.course{background:#059669}
+
+  /* Library */
+  .lib-cat{margin:36px 0 16px}
+  .lib-cat-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .lib-cat-head .pill{font-size:12px;font-weight:800;color:#fff;padding:4px 12px;border-radius:999px}
+  .lib-cat-head .cnt{font-size:13px;color:var(--muted)}
+  .lib-cat-desc{font-size:13.5px;color:var(--muted);margin:-6px 0 14px}
+  .lib-more{margin-top:12px;padding:10px 14px;font-size:12.5px;color:var(--muted);background:var(--c-light);
+    border:1px dashed var(--line);border-radius:10px;text-align:center}
+  .doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .doc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start;box-shadow:var(--shadow-sm);transition:.2s}
+  .doc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
+  .doc .lv-dot{width:10px;height:10px;border-radius:50%;margin-top:7px;flex-shrink:0}
+  .doc .meta{flex:1;min-width:0}
+  .doc .name{font-size:13.5px;font-weight:700;line-height:1.4;word-break:break-word}
+  .doc .open{font-size:12px;color:var(--brand);font-weight:700;white-space:nowrap;margin-top:6px;display:inline-block}
+
+  footer{text-align:center;color:var(--muted);padding:45px 0;font-size:13px;border-top:1px solid var(--line)}
+  .empty{text-align:center;color:var(--muted);padding:50px 20px;font-size:15px;background:var(--panel);border-radius:var(--radius);border:1px dashed var(--line)}
+
+  /* ===== 在线编程 ===== */
+  .pg-head{display:flex;align-items:center;gap:12px;margin:0 0 14px;flex-wrap:wrap}
+  .pg-mode{display:flex;gap:8px}
+  .pg-mode button{padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:var(--c-light);
+    font-weight:700;cursor:pointer;font-size:14px;color:var(--text)}
+  .pg-mode button.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent}
+  .editor{width:100%;min-height:300px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:12px;
+    padding:16px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13.5px;line-height:1.6;resize:vertical;display:block}
+  .run-row{display:flex;gap:12px;align-items:center;margin:14px 0}
+  .btn{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none;border-radius:10px;
+    padding:11px 24px;font-weight:800;font-size:15px;cursor:pointer;transition:.2s}
+  .btn:hover{filter:brightness(1.08)}
+  .btn:disabled{opacity:.6;cursor:progress}
+  .btn-ghost{background:var(--c-light);color:var(--text);border:1px solid var(--line)}
+  .out{background:#0d1117;color:#c9d1d9;border:1px solid #30363d;border-radius:12px;padding:16px;min-height:120px;
+    font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;white-space:pre-wrap;overflow:auto;max-height:420px}
+  .out .err{color:#ff7b72}
+  .pg-note{font-size:13px;color:var(--muted);margin-top:10px}
+  .pg-loading{color:#f59e0b;font-weight:700}
+
+  /* ===== 自我审核 ===== */
+  .quiz-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+  select{padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:14px;font-weight:600}
+  .quiz-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
+  .quiz-meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:10px}
+  .quiz-q{font-size:18px;font-weight:800;margin-bottom:18px}
+  .quiz-opts{display:flex;flex-direction:column;gap:10px}
+  .quiz-opt{padding:13px 16px;border:1px solid var(--line);border-radius:12px;cursor:pointer;font-size:15px;transition:.15s;display:flex;gap:10px;align-items:center}
+  .quiz-opt:hover{border-color:var(--brand);background:var(--c-light)}
+  .quiz-opt.correct{background:rgba(22,163,74,.12);border-color:var(--lv1);color:var(--lv1);font-weight:700}
+  .quiz-opt.wrong{background:rgba(239,68,68,.1);border-color:var(--lv4);color:var(--lv4);font-weight:700}
+  .quiz-explain{margin-top:16px;padding:14px 16px;background:rgba(37,99,235,.06);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;font-size:14px}
+  .quiz-actions{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
+  .quiz-result{text-align:center;padding:30px}
+  .quiz-result .big{font-size:46px;font-weight:900;color:var(--brand)}
+  .prog{height:10px;background:var(--c-light);border-radius:999px;overflow:hidden;margin:14px 0;border:1px solid var(--line)}
+  .prog > div{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2));width:0;transition:.3s}
+
+  /* ===== AI 晨报（厚涂水粉统一风格）===== */
+  .brief-hero{position:relative;padding:78px 0 132px;overflow:hidden;background:var(--paper)}
+  .brief-hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover no-repeat;opacity:.96}
+  .brief-hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(102deg, rgba(250,246,239,.93) 0%, rgba(250,246,239,.72) 46%, rgba(250,246,239,.14) 100%)}
+  :root[data-theme="dark"] .brief-hero::after{background:linear-gradient(102deg, rgba(25,34,58,.9) 0%, rgba(25,34,58,.6) 46%, rgba(25,34,58,.18) 100%)}
+  .brief-hero-inner{position:relative;max-width:1180px;margin:0 auto;padding:0 22px;z-index:2}
+  .brief-hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--brand-2);
+    background:rgba(255,255,255,.62);border:1px solid rgba(59,108,183,.35);padding:6px 18px;border-radius:999px;margin-bottom:20px}
+  :root[data-theme="dark"] .brief-hero-tag{background:rgba(255,255,255,.06);color:var(--brand)}
+  .brief-hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 8px rgba(59,108,183,.4)}
+  .brief-hero h1{font-family:"Noto Serif SC","Songti SC",STSong,"SimSun",serif;font-size:42px;font-weight:900;line-height:1.25;color:var(--ink);margin-bottom:10px}
+  /* hero 说明文字：日间用深色保证水粉图上可读，夜间恢复柔和 */
+  .brief-date{font-size:15px;color:#57503F;margin-bottom:4px;font-weight:600}
+  .brief-total{font-size:14px;color:#57503F;margin-bottom:30px;font-weight:600}
+  .brief-total b{color:var(--brand-2);font-size:20px;margin:0 3px;font-weight:800}
+  :root[data-theme="dark"] .brief-date,:root[data-theme="dark"] .brief-total{color:var(--muted)}
+  .brief-stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-start}
+  .brief-stat{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.72);border:1px solid var(--line);
+    border-left:3px solid var(--c);padding:9px 18px;border-radius:10px;min-width:138px;transition:.25s}
+  :root[data-theme="dark"] .brief-stat{background:rgba(255,255,255,.06)}
+  .brief-stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .brief-stat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .brief-stat-num{font-size:19px;font-weight:800;color:var(--c)}
+  .brief-stat-label{font-size:12px;color:#57503F;font-weight:600}
+  :root[data-theme="dark"] .brief-stat-label{color:var(--muted)}
+  .brief-learn{margin-top:18px}
+  .brief-learn a{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--brand-2);
+    background:rgba(255,255,255,.62);border:1px dashed rgba(59,108,183,.45);padding:8px 20px;border-radius:999px;transition:.25s;font-weight:700}
+  :root[data-theme="dark"] .brief-learn a{background:rgba(255,255,255,.06)}
+  .brief-learn a:hover{background:rgba(255,255,255,.85);border-style:solid;transform:translateY(-2px)}
+
+  .brief-nav{position:sticky;top:60px;z-index:40;background:var(--briefnav-bg);-webkit-backdrop-filter:/1;backdrop-filter:/1;
+    border-bottom:1px solid var(--line);padding:11px 20px}
+  .brief-nav-inner{max-width:1180px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .brief-nav-chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);
+    background:var(--c-light);border:1px solid var(--line);padding:6px 15px;border-radius:999px;transition:.22s;cursor:pointer}
+  .brief-nav-chip:hover{color:var(--brand);border-color:var(--brand);transform:translateY(-1px)}
+  .brief-nav-chip.active{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent}
+  .brief-nav-dot{width:7px;height:7px;border-radius:50%}
+  .brief-nav-chip b{font-weight:700;font-size:12px;margin-left:4px}
+
+  .brief-main{padding:30px 22px 60px}
+  .brief-section{margin-bottom:48px;scroll-margin-top:130px}
+  .brief-sec-head{display:flex;align-items:center;gap:13px;margin-bottom:22px;padding-bottom:13px;position:relative}
+  .brief-sec-head::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) 18%,transparent 55%);opacity:.85}
+  .brief-sec-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;
+    font-weight:800;font-size:14px;color:#fff;flex-shrink:0;box-shadow:0 4px 14px -4px var(--accent)}
+  .brief-sec-head h2{font-size:20px;font-weight:700;letter-spacing:.5px}
+  .brief-sec-count{font-size:12.5px;color:var(--accent);background:var(--c-light);border:1px solid var(--line);
+    padding:3px 12px;border-radius:999px;margin-left:auto}
+  .brief-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:18px;align-items:start}
+  .brief-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+    box-shadow:var(--shadow-sm);display:flex;flex-direction:column;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease,border-color .25s,box-shadow .25s}
+  .brief-card.in{opacity:1;transform:none}
+  .brief-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow)}
+  .brief-card.in:hover{transform:translateY(-4px)}
+  .brief-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),transparent 75%);opacity:.85;border-radius:var(--radius) var(--radius) 0 0}
+  .brief-card{position:relative;overflow:hidden}
+  .brief-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px}
+  .brief-no{font-size:11px;font-weight:800;padding:3px 10px;border-radius:7px;color:#fff;letter-spacing:.5px}
+  .brief-time{font-size:12px;color:var(--muted);white-space:nowrap}
+  .brief-title{font-size:15px;font-weight:700;line-height:1.55;margin-bottom:10px}
+  .brief-title a{color:var(--text);background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s,color .2s}
+  .brief-title a:hover{color:var(--accent);background-size:100% 1px}
+  .brief-summary{font-size:13.5px;color:var(--muted);line-height:1.78;flex-grow:1;margin-bottom:12px}
+  .brief-reason{font-size:12.5px;color:var(--muted);background:var(--c-light);border-left:2px solid var(--accent);
+    padding:9px 13px;border-radius:0 9px 9px 0;margin-bottom:14px;line-height:1.72}
+  .brief-reason b{color:var(--accent)}
+  .brief-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .brief-chip{display:inline-block;font-size:11px;padding:3px 11px;border-radius:999px;border:1px solid;background:transparent}
+  .brief-link{font-size:12px;font-weight:700;white-space:nowrap;transition:.2s}
+  .brief-link:hover{opacity:.75}
+
+  /* ===== 学习笔记 ===== */
+  .note-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:18px}
+  .note-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);
+    display:flex;flex-direction:column;transition:.25s;cursor:pointer;position:relative;overflow:hidden}
+  .note-card::before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--nc,#7c3aed)}
+  .note-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--brand)}
+  .note-cat{font-size:11px;font-weight:800;color:#fff;padding:4px 10px;border-radius:999px;align-self:flex-start;margin-bottom:10px}
+  .note-card h3{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:8px}
+  .note-ex{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1}
+  .note-open{margin-top:14px;font-size:13px;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:5px}
+
+  .note-modal{position:fixed;inset:0;background:rgba(8,12,24,.6);-webkit-backdrop-filter:/1;backdrop-filter:/1;z-index:200;display:none;align-items:stretch;justify-content:center}
+  .note-modal.open{display:flex}
+  .note-reader{background:var(--panel);width:min(880px,94vw);max-height:92vh;margin:auto;border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+  .note-reader-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line);background:var(--c-light)}
+  .note-reader-head .nc{font-size:12px;font-weight:800;color:#fff;padding:4px 12px;border-radius:999px}
+  .note-reader-head h2{font-size:18px;font-weight:800;flex:1;min-width:0;line-height:1.4}
+  .note-reader-head .x{font-size:24px;cursor:pointer;color:var(--muted);line-height:1;padding:2px 8px;border-radius:8px}
+  .note-reader-head .x:hover{background:var(--line)}
+  .note-reader-body{padding:26px 30px;overflow:auto;line-height:1.85;font-size:15px}
+  .note-reader-body img{max-width:100%;border-radius:10px;margin:10px 0;opacity:.92}
+  .note-reader-body h1,.note-reader-body h2,.note-reader-body h3{margin:22px 0 10px;font-weight:800;line-height:1.4}
+  .note-reader-body h1{font-size:24px}.note-reader-body h2{font-size:20px}.note-reader-body h3{font-size:17px}
+  .note-reader-body p{margin:10px 0}
+  .note-reader-body ul,.note-reader-body ol{margin:10px 0 10px 22px}
+  .note-reader-body li{margin:5px 0}
+  .note-reader-body pre{background:#0d1117;color:#e6edf3;border-radius:10px;padding:14px;overflow:auto;font-size:13px;margin:12px 0;border:1px solid #30363d}
+  .note-reader-body code{font-family:"SFMono-Regular",Consolas,monospace;background:var(--c-light);padding:2px 6px;border-radius:5px;font-size:13px}
+  .note-reader-body pre code{background:none;padding:0}
+  .note-reader-body blockquote{border-left:3px solid var(--brand);padding:8px 14px;color:var(--muted);background:rgba(37,99,235,.05);border-radius:0 8px 8px 0;margin:12px 0}
+  .note-reader-body table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px}
+  .note-reader-body th,.note-reader-body td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+  .note-reader-body th{background:var(--c-light);font-weight:700}
+  .note-reader-foot{padding:12px 22px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);word-break:break-all}
+
+  /* ===== 全站搜索（Ctrl+K） ===== */
+  .search-modal{position:fixed;inset:0;background:rgba(8,12,24,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    z-index:300;display:none;align-items:flex-start;justify-content:center;padding:9vh 16px 16px}
+  .search-modal.open{display:flex}
+  .search-panel{width:100%;max-width:640px;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    box-shadow:0 20px 60px rgba(20,16,12,.28);overflow:hidden;animation:searchIn .18s ease}
+  @keyframes searchIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+  .search-bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .search-ico{font-size:16px}
+  .search-bar input{flex:1;border:none;outline:none;background:transparent;font-size:16px;color:var(--text)}
+  .search-esc{font-size:11px;color:var(--muted);background:var(--c-light);border:1px solid var(--line);border-radius:6px;padding:2px 8px;white-space:nowrap}
+  .search-results{max-height:56vh;overflow-y:auto;padding:8px}
+  .search-group{margin:6px 0 2px}
+  .search-group-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;color:var(--brand2);
+    background:var(--c-light);border-radius:999px;padding:2px 12px;margin:8px 6px 4px}
+  .search-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;cursor:pointer;font-size:14px;color:var(--text);text-decoration:none}
+  .search-item.active,.search-item:hover{background:var(--c-light)}
+  .search-item .si-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .search-item .si-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .search-item .si-title b{color:var(--brand);font-weight:800}
+  .search-item .si-sub{font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .search-empty{text-align:center;color:var(--muted);font-size:13.5px;padding:30px 10px}
+  @media(max-width:640px){.search-modal{padding-top:6vh}.search-results{max-height:62vh}}
+
+  /* ===== AI 趋势全景（hero 已并入统一水粉 brief-hero 结构）===== */
+  .trends-main{padding:30px 0 10px}
+  .trends-section{margin-bottom:38px}
+  .trends-h2{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;margin-bottom:16px}
+  .trends-h2 .bar{width:5px;height:20px;border-radius:3px;display:inline-block}
+  /* 关键数据 */
+  .kd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .kd-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm)}
+  .kd-card h3{font-size:14px;font-weight:800;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .kd-card h3 .kd-dot{width:9px;height:9px;border-radius:50%}
+  .kd-item{padding:11px 0;border-top:1px dashed var(--line)}
+  .kd-item:first-of-type{border-top:none}
+  .kd-val{font-size:20px;font-weight:900;color:var(--brand);line-height:1.2}
+  .kd-sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .kd-src{font-size:11px;color:var(--muted);opacity:.7;margin-top:4px}
+  /* 切片 */
+  .slice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+  .slice-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow-sm);border-top:4px solid var(--sc,#7c3aed);display:flex;flex-direction:column}
+  .slice-head{display:flex;align-items:center;gap:12px;padding:16px 18px 10px}
+  .slice-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:22px;color:#fff;flex:none}
+  .slice-head h3{font-size:16.5px;font-weight:800}
+  .slice-sum{font-size:12.5px;color:var(--muted);padding:0 18px 12px;line-height:1.6}
+  .slice-points{padding:0 14px 16px;display:flex;flex-direction:column;gap:9px}
+  .slice-point{background:var(--c-light);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}
+  .slice-point b{color:var(--text)}
+  .slice-point .sp-src{display:block;font-size:11px;color:var(--muted);margin-top:3px;opacity:.8}
+  /* 三极 */
+  .pole-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .pole-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+    box-shadow:var(--shadow-sm);border-left:5px solid var(--pc,#2563eb)}
+  .pole-card h3{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .pole-tag{font-size:12px;color:var(--muted);font-weight:600;margin:4px 0 12px}
+  .pole-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .pole-card li{font-size:13px;line-height:1.55;padding-left:18px;position:relative}
+  .pole-card li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--pc,#2563eb)}
+  .pole-src{font-size:11px;color:var(--muted);margin-top:12px;opacity:.7}
+  /* 预测 */
+  .pred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .pred-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;
+    box-shadow:var(--shadow-sm);position:relative}
+  .pred-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .pred-title{font-size:15.5px;font-weight:800}
+  .conf{font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .conf-high{background:rgba(22,163,74,.16);color:#16a34a}
+  .conf-mid{background:rgba(245,158,11,.16);color:#f59e0b}
+  .conf-low{background:rgba(239,68,68,.16);color:#ef4444}
+  .pred-d{font-size:13px;color:var(--text);line-height:1.6}
+  .pred-meta{font-size:11.5px;color:var(--muted);margin-top:10px;display:flex;justify-content:space-between;gap:8px}
+  .pred-slice{font-weight:700}
+  .trends-src{font-size:12px;color:var(--muted);margin:6px 0 30px;line-height:1.7}
+
+  /* trends 视图内联分类色（资讯卡片用） */
+  #view-trends{ --c-model:#6366f1; --c-industry:#f59e0b; --c-tip:#10b981; --c-paper:#ec4899; --c-product:#0ea5e9; }
+  .trends-desc{color:var(--muted);font-size:13.5px;margin:-6px 0 18px;max-width:780px;line-height:1.65}
+
+  /* AI 知识速览 */
+  .kno-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .kno-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+    box-shadow:var(--shadow-sm);transition:.25s;position:relative;overflow:hidden;border-top:4px solid var(--kc,#4f7cf6)}
+  .kno-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--kc)}
+  .kno-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .kno-ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:21px;color:#fff;flex:none;
+    background:linear-gradient(135deg,var(--kc,#4f7cf6),var(--brand-2));box-shadow:0 6px 16px -6px var(--kc,#4f7cf6)}
+  .kno-card h3{font-size:16.5px;font-weight:800;line-height:1.3}
+  .kno-en{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.4px}
+  .kno-d{font-size:13.5px;color:var(--muted);line-height:1.72}
+  .kno-why{margin-top:13px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;line-height:1.65;color:var(--text)}
+  .kno-why b{color:var(--brand-3)}
+
+  /* 多方面 AI 资讯 */
+  .news-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}
+  .nf{padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--c-light);color:var(--text);
+    font-size:13.5px;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px}
+  .nf:hover{border-color:var(--brand)}
+  .nf.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent}
+  .nf .nfd{font-size:11px;opacity:.8;font-weight:800}
+  .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+  .news-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);
+    display:flex;flex-direction:column;position:relative;overflow:hidden;transition:.25s;border-top:3px solid var(--nc,var(--brand))}
+  .news-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--nc)}
+  .news-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px;flex-wrap:wrap}
+  .news-cat{font-size:11px;font-weight:800;color:#fff;padding:4px 11px;border-radius:999px;background:var(--nc);display:inline-flex;align-items:center;gap:5px}
+  .news-cat .ne{font-size:12px}
+  .news-hot{font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,#ff6b6b,#ff8e53);padding:4px 10px;border-radius:999px}
+  .news-time{font-size:12px;color:var(--muted);white-space:nowrap}
+  .news-title{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:9px}
+  .news-title a{color:var(--text)}
+  .news-title a:hover{color:var(--brand)}
+  .news-sum{font-size:13.5px;color:var(--muted);line-height:1.72;flex:1}
+  .news-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .news-src{font-size:12px;color:var(--muted)}
+  .news-link{font-size:12.5px;font-weight:800;color:var(--brand);display:inline-flex;align-items:center;gap:4px}
+  .news-link:hover{opacity:.8}
+  .news-empty{text-align:center;color:var(--muted);padding:40px;background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius)}
+
+  /* GitHub 趋势 */
+  .gh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .gh-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);
+    display:flex;gap:14px;transition:.25s;position:relative}
+  .gh-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--brand)}
+  .gh-rank{font-size:22px;font-weight:900;color:var(--brand);opacity:.55;width:30px;flex:none;text-align:center;font-variant-numeric:tabular-nums}
+  .gh-body{flex:1;min-width:0}
+  .gh-name{font-size:15px;font-weight:800;word-break:break-word}
+  .gh-name a{color:var(--text)}
+  .gh-name a:hover{color:var(--brand)}
+  .gh-desc{font-size:13px;color:var(--muted);line-height:1.6;margin:6px 0 10px}
+  .gh-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+  .gh-star{color:#e0a106;font-weight:800}
+  .gh-fork{color:var(--muted);font-weight:700}
+  .gh-lang{display:inline-flex;align-items:center;gap:5px}
+  .gh-lang .ld{width:9px;height:9px;border-radius:50%;background:#4f7cf6}
+  .gh-note{font-size:12.5px;color:var(--muted);margin-top:16px}
+
+  @media (max-width:640px){.kd-val{font-size:18px}}
+
+  .hidden{display:none!important}
+  @media (max-width:760px){
+    header h1{font-size:28px}
+    .grid,.projects,.brief-grid{grid-template-columns:1fr}
+    .topic-desc{display:none}
+    .brief-hero{padding:52px 0 84px}
+    .paper-hero{padding:52px 0 84px}
+    .brief-hero h1,.paper-hero h1{font-size:27px}
+    .brief-nav{top:60px}
+    .brief-nav-inner{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;gap:7px;padding:0}
+    .brief-nav-inner::-webkit-scrollbar{display:none}
+    .brief-nav-chip{flex-shrink:0}
+    .brief-stat{min-width:0;flex:1 1 42%;padding:8px 12px}
+    /* 左侧色板手机适配：贴近左缘、缩小、避免遮挡 */
+    .palette-bar{left:6px;padding:8px 6px;gap:8px}
+    .pal-dot{width:17px;height:17px}
+    .pal-toggle{width:22px;height:22px;font-size:11px}
+    /* 说明文字层级微调 */
+    .brief-hero p,.paper-hero p{font-size:15px}
+  }
+/* ===================== 厚涂水粉 / 水彩纸质感 主题 ===================== */
+/* 纸张颗粒 + 笔刷扫痕：作为 body 背景层，自然置于内容之下 */
+body{
+  background-color:var(--bg);
+  background-image:
+    repeating-linear-gradient(116deg, rgba(120,100,70,.022) 0 2px, transparent 2px 10px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  background-size:auto, 220px 220px;
+  background-attachment:fixed;
+}
+:root[data-theme="dark"] body{ background-image:
+    repeating-linear-gradient(116deg, rgba(255,255,255,.018) 0 2px, transparent 2px 10px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+}
+/* 中文标题统一思源宋体 Bold */
+h1,h2,h3,.logo,.topic-title>span,.step h3,.proj h3,.kno-card h3,.slice-head h3,
+.pole-card h3,.pred-title,.kd-card h3,.gh-name,.lib-cat-head .pill,.brief-sec-head h2,
+.brief-hero h1,.news-title,.note-card h3,.fav-card h3,.quiz-q{
+  font-family:"Noto Serif SC","Songti SC",STSong,"SimSun",serif;
+  font-weight:700; letter-spacing:.3px;
+}
+/* 卡片统一为纯白带哑光柔和阴影 + 极淡纸纹 */
+.kp,.note-card,.news-card,.gh-card,.proj,.doc,.kd-card,.slice-card,.pole-card,.pred-card,
+.brief-card,.panel,.stat,.chip,.step,.quiz-card,.lib-cat,.fav-card{
+  background:var(--panel);
+  box-shadow:var(--shadow-sm);
+}
+.kp:hover,.note-card:hover,.news-card:hover,.gh-card:hover,.proj:hover,.doc:hover,
+.kno-card:hover,.slice-card:hover,.pole-card:hover,.pred-card:hover,.fav-card:hover{
+  box-shadow:var(--shadow);
+}
+/* 主按钮/激活态统一为群青蓝点睛 */
+.nav-tab.active,.chip.active,.pg-mode button.active,.brief-nav-chip.active,.nf.active{
+  background:var(--brand); color:#fff; border-color:transparent;
+}
+.btn{background:var(--brand)}
+.pg-mode button.active{background:var(--brand)}
+.kp .lib-btn{color:var(--brand-3);border:1px solid var(--brand-3);background:transparent}
+.kp .lib-btn:hover{background:var(--brand-3);color:#fff}
+.theme-toggle,.news-refresh{background:var(--c-light)}
+
+/* ===== 纸质 Hero（知识视图顶部）===== */
+.paper-hero{position:relative;padding:78px 0 132px;overflow:hidden;background:var(--paper)}
+.paper-hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover no-repeat;opacity:.96}
+.paper-hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(102deg, rgba(250,246,239,.93) 0%, rgba(250,246,239,.72) 46%, rgba(250,246,239,.14) 100%)}
+:root[data-theme="dark"] .paper-hero::after{background:linear-gradient(102deg, rgba(25,34,58,.9) 0%, rgba(25,34,58,.6) 46%, rgba(25,34,58,.18) 100%)}
+.paper-hero-inner{position:relative;z-index:2}
+.paper-hero h1{font-size:42px;font-weight:900;line-height:1.25;color:var(--ink)}
+.paper-hero p{margin-top:16px;font-size:18px;color:#57503F;font-weight:600;max-width:720px}
+:root[data-theme="dark"] .paper-hero p{color:var(--muted)}
+/* 主页实时时钟 */
+.live-clock{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-size:15px;font-weight:700;color:var(--brand-2);
+  background:rgba(255,255,255,.66);border:1px solid var(--line);padding:9px 18px;border-radius:999px;
+  font-variant-numeric:tabular-nums;letter-spacing:.5px}
+:root[data-theme="dark"] .live-clock{background:rgba(255,255,255,.07);color:var(--text)}
+.lc-dot{width:8px;height:8px;border-radius:50%;background:var(--lv1);box-shadow:0 0 8px rgba(107,163,104,.55);animation:lcPulse 2s ease-in-out infinite}
+@keyframes lcPulse{50%{opacity:.35}}
+.paper-hero .stat{background:rgba(255,255,255,.55);border:1px solid var(--line);color:var(--ink)}
+:root[data-theme="dark"] .paper-hero .stat{background:rgba(255,255,255,.06);color:var(--text)}
+
+/* ===== 左侧竖排 4 色色板（可隐藏）===== */
+.palette-bar{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:60;
+  display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);
+  border-radius:999px;padding:11px 8px;box-shadow:var(--shadow);-webkit-backdrop-filter:/1;backdrop-filter:/1}
+.pal-dots{display:flex;flex-direction:column;gap:10px;align-items:center}
+.pal-dot{width:22px;height:22px;border-radius:50%;cursor:pointer;flex:none;
+  border:2px solid var(--panel);outline:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.18);transition:transform .16s,outline-color .16s}
+.pal-dot:hover{transform:scale(1.18)}
+.pal-dot.active{outline:2px solid var(--brand);transform:scale(1.16)}
+.pal-toggle{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--c-light);
+  cursor:pointer;font-size:13px;display:grid;place-items:center;transition:.2s;padding:0;line-height:1}
+.pal-toggle:hover{border-color:var(--brand);transform:scale(1.12)}
+.palette-bar.pal-hidden .pal-dots{display:none}
+.palette-bar.pal-hidden{padding:7px}
+
+/* ===== 兴趣收藏：红星 ===== */
+.fav-star{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line);background:var(--panel);color:var(--brand-3);font-size:18px;line-height:1;
+  cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm);transition:.18s;z-index:4}
+.fav-star:hover{transform:scale(1.14);border-color:var(--brand-3)}
+.fav-star.on{color:#fff;background:var(--brand-3);border-color:var(--brand-3)}
+.doc{position:relative}
+.doc .fav-star{top:10px;right:10px;width:30px;height:30px;font-size:16px}
+
+/* ===== 项目实战视图 ===== */
+.proj-hero{position:relative;padding:40px 0 18px}
+.proj-hero h2{font-size:26px;font-weight:900;color:var(--ink)}
+.proj-hero p{color:var(--muted);margin-top:8px;max-width:760px}
+.proj-cta{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--brand);color:#fff;
+  font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:12px;transition:.2s}
+.proj-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+/* ===== 收藏夹视图 ===== */
+.fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-top:18px}
+.fav-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.fav-card a.fav-link{color:var(--text);text-decoration:none}
+.fav-card h3{font-size:16px;font-weight:800;margin-bottom:8px;line-height:1.5}
+.fav-card .fav-meta{font-size:12.5px;color:var(--muted);margin-top:auto;padding-top:10px}
+.fav-card .fav-type{display:inline-block;font-size:11px;font-weight:800;color:#fff;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.fav-empty{text-align:center;color:var(--muted);padding:50px 20px;font-size:15px;
+  background:var(--panel);border-radius:var(--radius);border:1px dashed var(--line)}
+
+/* ===== 资讯实时刷新栏 ===== */
+.news-bar{display:flex;align-items:center;gap:12px;margin:-2px 0 16px;flex-wrap:wrap}
+.news-status{font-size:12.5px;color:var(--muted);font-weight:600}
+.news-status .live{color:var(--lv1);font-weight:800}
+.news-refresh{cursor:pointer}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><img src="images/logo-emblem.webp" alt="沐阳" class="logo-emblem"><span class="wordmark">沐阳</span></div>
+    <div class="nav-tabs">
+      <div class="nav-tab active" data-view="knowledge">📘 学习图谱</div>
+      <div class="nav-tab" data-view="notes">📒 学习笔记</div>
+      <div class="nav-tab" data-view="briefing">📰 AI 晨报</div>
+      <div class="nav-tab" data-view="trends">📡 AI 趋势</div>
+      <div class="nav-tab" data-view="library">📚 资料库 <span id="doc-num"></span></div>
+      <div class="nav-tab" data-view="projects">🛠️ 项目实战</div>
+      <div class="nav-tab" data-view="code">🧪 在线编程</div>
+      <div class="nav-tab" data-view="quiz">📝 自我审核</div>
+      <div class="nav-tab" data-view="favorites">⭐ 收藏夹</div>
+    </div>
+    <button class="theme-toggle" id="search-btn" onclick="openSearch()" title="全站搜索（Ctrl+K）" aria-label="全站搜索">🔍</button>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" title="切换日间 / 夜间模式" aria-label="切换主题">🌙</button>
+  </div>
+</nav>
+
+<!-- ===== 学习图谱视图 ===== -->
+<div id="view-knowledge">
+  <div class="paper-hero" style="--hero-img:url('images/minimalist_narrative_gouache_p_2026-08-31T14-47-06.webp')">
+    <div class="wrap paper-hero-inner">
+      <h1>数据 × AI 学习图谱</h1>
+      <div class="live-clock" id="live-clock"><span class="lc-dot"></span><span id="lc-text">正在同步时间…</span></div>
+      <p>按阶段学习：Python、MySQL、数据分析、人工智能。从「零基础」到「行业大牛」，每一步都有视频、文章、论文与在线资源指路，还能在线写代码、做测验、看 AI 晨报。</p>
+      <div class="stats">
+        <div class="stat"><b id="s-topic">4</b><span>知识板块</span></div>
+        <div class="stat"><b id="s-count">—</b><span>精选知识点</span></div>
+        <div class="stat"><b id="s-doc">—</b><span>在线资源</span></div>
+        <div class="stat"><b id="s-year">2026</b><span>持续更新</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="controls wrap">
+    <div class="panel">
+      <div class="control-group">
+        <div class="control-label"><strong>学习方向</strong><small>先选感兴趣的技术栈</small></div>
+        <div class="chips" id="topic-chips">
+          <button class="chip topic active" data-topic="all"><i>🌐</i>全部</button>
+          <button class="chip topic" data-topic="python"><i>🐍</i>Python</button>
+          <button class="chip topic" data-topic="mysql"><i>🗄️</i>MySQL</button>
+          <button class="chip topic" data-topic="data"><i>📊</i>数据分析</button>
+          <button class="chip topic" data-topic="ai"><i>🤖</i>AI 知识</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="control-label"><strong>掌握程度</strong><small>根据自身基础筛选</small></div>
+        <div class="chips" id="lv-chips">
+          <button class="chip lv active" data-lv="all"><i>🌟</i>全部</button>
+          <button class="chip lv" data-lv="1"><i>🌱</i>零基础</button>
+          <button class="chip lv" data-lv="2"><i>🌿</i>刚入门</button>
+          <button class="chip lv" data-lv="3"><i>🌳</i>已熟悉</button>
+          <button class="chip lv" data-lv="4"><i>🚀</i>大神级</button>
+        </div>
+      </div>
+      <div class="quick-path" style="margin-top:16px">
+        <span>💡 不知道选哪个？试试系统路径：</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+          <button class="chip" onclick="filterPreset('all','1')">从零开始</button>
+          <button class="chip" onclick="filterPreset('data','2')">数据分析进阶</button>
+          <button class="chip" onclick="filterPreset('ai','3')">AI 深入</button>
+          <button class="chip" onclick="filterPreset('python','4')">Python 精进</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap" id="view-knowledge-main">
+    <section class="path">
+      <h2>🎯 完整学习链条</h2>
+      <div class="sub">借鉴 freeCodeCamp 的能力阶梯与 Google UX 的流程：先认识，再实战，最后做项目攒作品集。</div>
+      <div class="steps">
+        <div class="step"><div class="num" style="background:var(--lv1)">1</div><h3>🌱 认识知识点</h3><p>建立概念框架：是什么、为什么、核心术语。配合入门文档与视频，先把地图看明白。</p><div class="arrow">→</div></div>
+        <div class="step"><div class="num" style="background:var(--lv2)">2</div><h3>🌿 动手实战</h3><p>在「🧪 在线编程」里照着代码示例敲一遍：写函数、写 SQL、调 API。错误是最好的老师。</p><div class="arrow">→</div></div>
+        <div class="step"><div class="num" style="background:var(--lv4)">3</div><h3>🚀 项目实战</h3><p>按规范从零做一个端到端项目，沉淀成可展示的作品集。下面这些项目可直接照做。</p></div>
+      </div>
+    </section>
+
+    <div id="content"></div>
+
+    <section>
+      <div class="topic-title"><div class="topic-icon" style="background:linear-gradient(135deg,#ef4444,#7c3aed)">🛠️</div><span>项目实战</span>
+        <span class="topic-desc">照着做，攒出属于你的作品集</span></div>
+      <div class="projects" id="projects"></div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== 在线编程视图 ===== -->
+<div id="view-code" class="hidden">
+  <main class="wrap">
+    <div class="pg-head">
+      <div class="topic-icon" style="background:linear-gradient(135deg,#16a34a,#0ea5e9)">🧪</div>
+      <div>
+        <div style="font-size:20px;font-weight:800">在线编程沙箱</div>
+        <div style="font-size:13px;color:var(--muted)">在浏览器里直接运行 Python / SQL，无需安装任何环境（首次加载需下载运行时，请稍候）</div>
+      </div>
+      <div class="pg-mode" style="margin-left:auto">
+        <button id="mode-py" class="active" onclick="setCodeMode('python')">🐍 Python</button>
+        <button id="mode-sql" onclick="setCodeMode('sql')">🗄️ SQL</button>
+      </div>
+    </div>
+    <div class="panel">
+      <textarea id="code-editor" class="editor" spellcheck="false"></textarea>
+      <div class="run-row">
+        <button class="btn" id="run-btn" onclick="runCode()">▶ 运行代码</button>
+        <button class="btn btn-ghost" onclick="loadSample()">↺ 载入示例</button>
+        <span id="code-status" class="pg-loading"></span>
+      </div>
+      <div id="code-output" class="out">// 输出结果会显示在这里…</div>
+      <div class="pg-note">提示：Python 运行环境基于 Pyodide（浏览器内 CPython），可运行标准库与 numpy/pandas 等多数纯 Python 包；SQL 基于 sql.js（浏览器内 SQLite）。代码仅在你的浏览器本地执行，不上传服务器。</div>
+    </div>
+  </main>
+</div>
+
+<!-- ===== 自我审核视图 ===== -->
+<div id="view-quiz" class="hidden">
+  <main class="wrap">
+    <div class="pg-head">
+      <div class="topic-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">📝</div>
+      <div>
+        <div style="font-size:20px;font-weight:800">自我审核 · 闯关测验</div>
+        <div style="font-size:13px;color:var(--muted)">选择题 + 判断题，做完即时判分并给出解析，错题自动进入「错题本」</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="quiz-bar">
+        <span style="font-weight:700">选择板块：</span>
+        <select id="quiz-topic">
+          <option value="python">🐍 Python</option>
+          <option value="mysql">🗄️ MySQL</option>
+          <option value="data">📊 数据分析</option>
+          <option value="ai">🤖 AI 知识</option>
+        </select>
+        <button class="btn" onclick="startQuiz()">开始测验</button>
+        <button class="btn btn-ghost" onclick="showWrongBook()">📕 错题本</button>
+        <span id="quiz-best" style="font-size:13px;color:var(--muted);margin-left:auto"></span>
+      </div>
+      <div id="quiz-area"><div class="empty">选择板块后点击「开始测验」即可开始～</div></div>
+    </div>
+  </main>
+</div>
+
+<!-- ===== 学习笔记视图 ===== -->
+<div id="view-notes" class="hidden">
+  <header class="brief-hero" style="--hero-img:url('images/minimalist_narrative_gouache_o_2026-08-31T15-36-30.webp')">
+    <div class="brief-hero-inner">
+      <span class="brief-hero-tag"><span class="dot"></span>LEARNING NOTES</span>
+      <h1>学习笔记库</h1>
+      <p class="brief-date">收录自本地资料的 <span id="note-total">—</span> 篇精选笔记，按主题分类</p>
+      <p class="brief-total">点击即可阅读全文 · 离线 / 部署均可</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="panel" style="margin-top:24px">
+      <div class="control-group">
+        <div class="control-label"><strong>笔记主题</strong><small>按内容归类</small></div>
+        <div class="chips" id="note-cat-chips"><button class="chip notecat active" data-cat="all">全部</button></div>
+      </div>
+    </div>
+    <div id="notes-area" style="margin-top:18px"></div>
+  </main>
+</div>
+
+<!-- 笔记阅读器 -->
+<!-- ===== 全站搜索（Ctrl+K） ===== -->
+<div class="search-modal" id="search-modal" onclick="if(event.target===this)closeSearch()">
+  <div class="search-panel">
+    <div class="search-bar">
+      <span class="search-ico">🔍</span>
+      <input id="search-input" type="text" placeholder="搜索知识点 / 笔记 / 资料 / 晨报存档 / 项目…" autocomplete="off" oninput="renderSearch(this.value)">
+      <span class="search-esc">Esc 关闭</span>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<div class="note-modal" id="note-modal" onclick="if(event.target===this)closeNote()">
+  <div class="note-reader">
+    <div class="note-reader-head">
+      <span class="nc" id="note-modal-cat"></span>
+      <h2 id="note-modal-title"></h2>
+      <span class="x" onclick="closeNote()">×</span>
+    </div>
+    <div class="note-reader-body" id="note-modal-body"></div>
+    <div class="note-reader-foot" id="note-modal-foot"></div>
+  </div>
+</div>
+
+<!-- ===== AI 晨报视图 ===== -->
+<div id="view-briefing" class="hidden">
+  <header class="brief-hero" style="--hero-img:url('images/minimalist_narrative_gouache_o_2026-08-31T15-10-42.webp')">
+    <div class="brief-hero-inner">
+      <span class="brief-hero-tag"><span class="dot"></span>AI MORNING BRIEFING</span>
+      <h1>AI 晨报仪表盘</h1>
+      <p class="brief-date" id="brief-date-live">正在同步日期…</p>
+      <p class="brief-total">共 <b id="brief-total">—</b> 条精选资讯 · 实时拉取 · 每日自动更新</p>
+      <div class="brief-stats">
+        <div class="brief-stat" style="--c:#3B6CB7"><span class="brief-stat-dot" style="background:#3B6CB7"></span><span class="brief-stat-num" id="brief-stat-model">—</span><span class="brief-stat-label">模型发布/更新</span></div>
+        <div class="brief-stat" style="--c:#7BA05B"><span class="brief-stat-dot" style="background:#7BA05B"></span><span class="brief-stat-num" id="brief-stat-product">—</span><span class="brief-stat-label">产品发布/更新</span></div>
+        <div class="brief-stat" style="--c:#E0A33D"><span class="brief-stat-dot" style="background:#E0A33D"></span><span class="brief-stat-num" id="brief-stat-industry">—</span><span class="brief-stat-label">行业动态</span></div>
+        <div class="brief-stat" style="--c:#C25B4E"><span class="brief-stat-dot" style="background:#C25B4E"></span><span class="brief-stat-num" id="brief-stat-paper">—</span><span class="brief-stat-label">论文研究</span></div>
+        <div class="brief-stat" style="--c:#8C8475"><span class="brief-stat-dot" style="background:#8C8475"></span><span class="brief-stat-num" id="brief-stat-tip">—</span><span class="brief-stat-label">技巧与观点</span></div>
+      </div>
+      <div class="brief-learn"><a href="javascript:showView('knowledge')" id="brief-learn">📚 今日学习 · 加载中…</a></div>
+    </div>
+  </header>
+
+  <nav class="brief-nav">
+    <div class="brief-nav-inner" id="brief-nav">
+      <div class="brief-nav-chip active" data-cat="all"><span class="brief-nav-dot" style="background:#8C8475"></span>全部<b id="brief-nav-all">21</b></div>
+      <div class="brief-nav-chip" data-cat="model"><span class="brief-nav-dot" style="background:#3B6CB7"></span>模型发布/更新</div>
+      <div class="brief-nav-chip" data-cat="product"><span class="brief-nav-dot" style="background:#7BA05B"></span>产品发布/更新</div>
+      <div class="brief-nav-chip" data-cat="industry"><span class="brief-nav-dot" style="background:#E0A33D"></span>行业动态</div>
+      <div class="brief-nav-chip" data-cat="paper"><span class="brief-nav-dot" style="background:#C25B4E"></span>论文研究</div>
+      <div class="brief-nav-chip" data-cat="tip"><span class="brief-nav-dot" style="background:#8C8475"></span>技巧与观点</div>
+    </div>
+  </nav>
+
+  <main class="brief-main" id="brief-main">
+    <div class="empty">晨报数据加载中…</div>
+  </main>
+</div>
+
+<!-- ===== AI 趋势全景视图 ===== -->
+<div id="view-trends" class="hidden">
+  <header class="brief-hero" style="--hero-img:url('images/minimalist_narrative_gouache_p_2026-08-31T14-47-07.webp')">
+    <div class="brief-hero-inner">
+      <span class="brief-hero-tag"><span class="dot"></span>AI LANDSCAPE 2026</span>
+      <h1>AI 趋势全景</h1>
+      <p class="brief-date">六大核心切片 · 关键数据 · AI 知识速览 · 中美欧三极格局 · 2026 预测 · 实时资讯</p>
+      <p class="brief-total">数据来源：Stanford HAI 2026 AI Index · McKinsey State of AI · a16z · Gartner · IDC · Epoch AI · AI HOT 实时资讯 · GitHub 趋势追踪</p>
+    </div>
+  </header>
+
+  <main class="wrap trends-main">
+    <!-- 关键数据 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#2563eb"></span>关键数据 Key Metrics</h2>
+      <div class="kd-grid" id="kd-grid"></div>
+    </section>
+
+    <!-- 六个核心切片 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#7c3aed"></span>六大核心切片 Six Core Slices</h2>
+      <div class="slice-grid" id="slice-grid"></div>
+    </section>
+
+    <!-- AI 知识速览 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#4f7cf6"></span>💡 AI 知识速览 Knowledge Primer</h2>
+      <p class="trends-desc">读懂趋势前先补基础概念：用大白话讲清 Agent、RAG、微调、多模态、幻觉、对齐、端侧推理，并附「为什么对数据分析求职者重要」。</p>
+      <div class="kno-grid" id="kno-grid"></div>
+    </section>
+
+    <!-- 中美欧三极格局 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#f59e0b"></span>中美欧三极格局 US · China · EU</h2>
+      <div class="pole-grid" id="pole-grid"></div>
+    </section>
+
+    <!-- 2026 关键预测 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#16a34a"></span>2026 关键预测 Predictions</h2>
+      <div class="pred-grid" id="pred-grid"></div>
+    </section>
+
+    <!-- 多方面 AI 资讯 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#db2777"></span>📰 多方面 AI 资讯 Live Feed</h2>
+      <p class="trends-desc">来自 AI HOT 的实时精选，覆盖模型发布、行业动态、技巧观点、论文研究与产品工具五大类。点击分类筛选，点标题跳转原文。</p>
+      <div class="news-bar">
+        <span class="news-status" id="news-status">加载中…</span>
+        <button class="nf news-refresh" id="news-refresh" onclick="loadTrendsNews(true)">🔄 刷新实时资讯</button>
+      </div>
+      <div class="news-filters" id="news-filters"></div>
+      <div class="news-grid" id="news-grid"></div>
+    </section>
+
+    <!-- GitHub AI 趋势榜 -->
+    <section class="trends-section">
+      <h2 class="trends-h2"><span class="bar" style="background:#0ea5e9"></span>⭐ GitHub AI 趋势榜 Trends</h2>
+      <p class="trends-desc">本周 GitHub 上最热门的 AI 开源项目（按 Star 数），一眼看清开发者正在往哪里聚集。</p>
+      <div class="gh-grid" id="gh-grid"></div>
+      <p class="gh-note">📡 数据由 GitHub AI 趋势追踪生成（周榜，检索于 2026-08-30）。点击项目名直达仓库。</p>
+    </section>
+
+    <p class="trends-src">📌 数据来源：<span id="trends-src-list"></span></p>
+  </main>
+</div>
+
+<!-- ===== 资料库视图 ===== -->
+<div id="view-library" class="hidden">
+  <header class="brief-hero" style="--hero-img:url('images/minimalist_narrative_gouache_o_2026-08-31T15-37-00.webp')">
+    <div class="brief-hero-inner">
+      <span class="brief-hero-tag"><span class="dot"></span>RESOURCE LIBRARY</span>
+      <h1>资料库</h1>
+      <p class="brief-date"><span id="doc-num-hero">—</span> 份精选在线资源 · 视频 / 文章 / 论文 / 文档 / 课程</p>
+      <p class="brief-total">按分类与掌握程度筛选，收藏红星可存入收藏夹随时复看</p>
+    </div>
+  </header>
+  <div class="controls wrap" style="margin:24px auto 0">
+    <div class="panel">
+      <div class="control-group">
+        <div class="control-label"><strong>资料分类</strong><small>按内容归类</small></div>
+        <div class="chips" id="lib-cat-chips"><button class="chip libcat active" data-cat="all">全部</button></div>
+      </div>
+      <div class="control-group">
+        <div class="control-label"><strong>掌握程度</strong><small>筛选难度</small></div>
+        <div class="chips" id="lib-lv-chips">
+          <button class="chip lvlib active" data-lv="all">全部</button>
+          <button class="chip lvlib" data-lv="1">🌱 零基础</button>
+          <button class="chip lvlib" data-lv="2">🌿 刚入门</button>
+          <button class="chip lvlib" data-lv="3">🌳 已熟悉</button>
+          <button class="chip lvlib" data-lv="4">🚀 大神级</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="wrap">
+    <div id="library"></div>
+  </main>
+</div>
+
+<!-- ===== 项目实战视图 ===== -->
+<div id="view-projects" class="hidden">
+  <header class="brief-hero" style="--hero-img:url('images/minimalist_narrative_gouache_o_2026-08-31T15-37-49.webp')">
+    <div class="brief-hero-inner">
+      <span class="brief-hero-tag"><span class="dot"></span>PROJECT LAB</span>
+      <h1>GitHub 项目实战 · 练手复现</h1>
+      <p class="brief-date">挑选适合「应用统计 / 数据分析」方向的易上手项目</p>
+      <p class="brief-total">照着做、改一改，就能攒出可展示的作品集 · 每个都附可直接 fork 的开源仓库与练手建议</p>
+      <div class="brief-learn"><a href="https://github.com/trending?since=weekly" target="_blank" rel="noopener">🔗 去 GitHub 看本周趋势 →</a></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="projects" id="gh-projects" style="margin-top:20px"></div>
+  </main>
+</div>
+
+<!-- ===== 收藏夹视图 ===== -->
+<div id="view-favorites" class="hidden">
+  <main class="wrap">
+    <div class="proj-hero">
+      <div class="topic-icon" style="background:var(--brand-3)">⭐</div>
+      <h2 style="margin-top:10px">我的收藏夹</h2>
+      <p>点过红星的资讯、笔记、资料、项目都会在这里汇总，方便随时回看。收藏数据仅保存在你本机浏览器（localStorage）。</p>
+    </div>
+    <div id="favorites-area"></div>
+  </main>
+</div>
+
+<!-- 底部 6 色圆点色板 -->
+<div class="palette-bar" id="palette-bar">
+  <button class="pal-toggle" id="pal-toggle" title="显示 / 隐藏色板" aria-label="显示或隐藏主题色板">🎨</button>
+  <span class="pal-dots">
+    <span class="pal-dot" data-c="#3B6CB7" title="群青蓝 #3B6CB7" style="background:#3B6CB7"></span>
+    <span class="pal-dot" data-c="#E8A33D" title="赭石橙 #E8A33D" style="background:#E8A33D"></span>
+    <span class="pal-dot" data-c="#7BA05B" title="苔绿 #7BA05B" style="background:#7BA05B"></span>
+    <span class="pal-dot" data-c="#C25B4E" title="砖红 #C25B4E" style="background:#C25B4E"></span>
+  </span>
+</div>
+
+<footer>
+  沐阳 · 数据与 AI 学习图谱 · 内容持续更新 · 从零到进阶，向阳而行 🌅
+</footer>
+
+<script src="vendor/marked.min.js?v=20260914c"></script>
+<script src="ai-trends-data.js?v=20260914c"></script>
+<script src="briefing-data.js?v=20260914c"></script>
+<script src="docs-data.js?v=20260914c"></script>
+<script src="brief-library-data.js?v=20260914c"></script>
+<script src="pdfs-data.js?v=20260914c"></script>
+<script src="knowledge.js?v=20260914c"></script>
+<script src="quizzes.js?v=20260914c"></script>
+<script src="notes-data.js?v=20260914c"></script>
+<script src="script.js?v=20260914c"></script>
+</body>
+</html>
