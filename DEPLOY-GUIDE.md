@@ -1,6 +1,10 @@
 # 沐阳站点 · GitHub Pages 上传全流程指南
 
-> 目标：把站点推送到 `https://tzmlyy-lgtm.github.io`（用户站点），部署由仓库里已备好的
+> **⚠️ 仓库已改名（2026-09）**：`tzmlyy-lgtm.github.io` → **`muyang-aiknowledge`**。
+> 站点地址相应变为项目页：**https://tzmlyy-lgtm.github.io/muyang-aiknowledge**（原根域名地址已失效）。
+> 本指南中早期"创建仓库"步骤仅作历史参考，日常更新直接看第 6 步。
+
+> 目标：把站点部署到 `https://tzmlyy-lgtm.github.io/muyang-aiknowledge`，部署由仓库里已备好的
 > `.github/workflows/deploy.yml` 自动完成，后续每次 `git push` 自动重新部署。
 
 ---
@@ -8,7 +12,7 @@
 ## 前置说明
 
 - 本地仓库已就绪：分支 `main`、初始提交完成、remote `origin` 已指向
-  `https://github.com/tzmlyy-lgtm/tzmlyy-lgtm.github.io.git`（尚未推送）。
+  `https://github.com/tzmlyy-lgtm/muyang-aiknowledge.git`。
 - 仓库内已有两个工作流：
   - `deploy.yml`：push 到 main 时自动部署 GitHub Pages
   - `refresh-news.yml`：每 6 小时自动拉取 AI 资讯写入 `news-data.json`（离线兜底数据）
@@ -66,13 +70,13 @@ git push -u origin main
 1. 仓库页面 → **Settings** → 左栏 **Pages**。
 2. **Build and deployment → Source** 选择：**GitHub Actions**（不是 Deploy from a branch）。
 3. 保存。push 成功后 `deploy.yml` 会自动跑；到 **Actions** 标签页可看到运行进度。
-4. 约 1–2 分钟后访问：**https://tzmlyy-lgtm.github.io** ✅
+4. 约 1–2 分钟后访问：**https://tzmlyy-lgtm.github.io/muyang-aiknowledge** ✅
 
 > 如果 Actions 没有自动运行：仓库 **Actions** 标签页 → 选中 "Deploy to GitHub Pages" → **Run workflow** 手动触发一次。
 
 ## 第 5 步：验证清单
 
-- [ ] https://tzmlyy-lgtm.github.io 打开正常，九个视图可切换
+- [ ] https://tzmlyy-lgtm.github.io/muyang-aiknowledge 打开正常，九个视图可切换
 - [ ] F12 控制台无红色报错
 - [ ] AI 晨报 / AI 趋势显示「● 实时」
 - [ ] Ctrl+K 搜索可用

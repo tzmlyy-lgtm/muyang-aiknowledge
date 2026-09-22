@@ -2,7 +2,7 @@
 
 > 一个由 AI 协作开发、人主导设计与质量验收的纯静态个人知识平台 —— 从内容生产、数据管道到质量工程的完整闭环。
 
-**线上访问**：[https://tzmlyy-lgtm.github.io](https://tzmlyy-lgtm.github.io) · 支持添加到主屏幕（PWA）、离线可读
+**线上访问**：[https://tzmlyy-lgtm.github.io/muyang-aiknowledge](https://tzmlyy-lgtm.github.io/muyang-aiknowledge) · 支持添加到主屏幕（PWA）、离线可读
 
 ![主页预览](docs/preview-home.webp)
 
@@ -54,8 +54,8 @@
 ## 📦 本地运行
 
 ```bash
-git clone https://github.com/tzmlyy-lgtm/tzmlyy-lgtm.github.io.git
-cd tzmlyy-lgtm.github.io
+git clone https://github.com/tzmlyy-lgtm/muyang-aiknowledge.git
+cd muyang-aiknowledge
 python -m http.server 8000    # 或直接双击 index.html
 # 打开 http://localhost:8000
 ```
